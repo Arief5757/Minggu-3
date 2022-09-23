@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Video Player</title>
+    <style type="text/css">
+        body{
+            background-color: rgb(89, 89, 236);
+        }
+    </style>
+  </head>
+ 
+  <body>
+    <h2 align="center">Hasil Belajar Mandiri HTML 5</h2>
+    <h3 align="center">Nama : Mohamad Arief Rizky Aditya</h3>
+    <h3 align="center">NIM : A11.2022.14378</h3>
+    
+    <center>
+    <video width="720" height="380" id="video1">
+        <source id="animasi.mp4" src="Media/Animated.mp4" type="video/mp4"> 
+        video file not support.......
+    </video>
+    </center>>
+
+    <p align="center">
+        <button onclick="playpause()" type="button"> play/pause</button>
+        <button onclick="mute()" type="button"> mute</button>
+        <button onclick="myFunction()" type="button"> Change Video</button><br>
+        <button onclick="control()" type="button">enable/disable control</button>
+        <button onclick="volume()" type="button"> volume 1</button>
+        <button onclick="volume2()" type="button"> volume 2</button><br>
+        <button onclick="ototmatis()" type="button"> Ulangi Video</button>
+        <a href="Media/Animated.mp4" download>
+          <button>Download Video 1</button>
+        </a>
+        <a href="Media/Semarang.mp4" download>
+          <button>Download Video 2</button>
+        </a>
+    </p>
+  </body>
+
+  <script>
+    var vid = document.getElementById("video1");
+    function myFunction() { 
+    document.getElementById("animasi.mp4").src = "Media/Semarang.mp4";
+    document.getElementById("video1").load();
+    };
+
+    function playpause() { 
+       if (vid.paused) 
+        vid.play(); 
+        else 
+          vid.pause(); 
+        } ;
+
+     function mute() { 
+        vid.muted = !vid.muted
+     };
+
+     function control() { 
+        vid.controls = !vid.controls
+     };
+     
+      function volume(){
+        vid.volume = 0.2;
+      };
+      function volume2(){
+        vid.volume = 1;
+      };
+
+      function ototmatis(){
+        vid.loop = !vid.loop
+      };
+  </script>
+</html>
